@@ -18,7 +18,6 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
@@ -59,20 +58,19 @@ a{
   color: var(--white-color);
 }
 
-.btn-wide{
+.btn-fluid{
   padding: 12px 18px;
   border-radius: 6px;
 
 }
 
-.button-container{
+.hero .button-container{
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 .container{
-  max-width: 1110px;
   padding-inline: 16px;
   margin-inline: auto;
 }
@@ -122,6 +120,10 @@ a{
   }
 }
 
+.desktop-visible{
+  display: none;
+}
+
 @media(width >= 768px){
   .top{
     background: url('../img/hero-bg-tablet.png') , url('../img/hero-mask-tablet.png');
@@ -154,8 +156,55 @@ a{
       margin-bottom: 48px;
     }
   }
-  .button-container{
+  .hero .button-container{
     flex-direction: row;
     justify-content: center;
+  }
+}
+
+@media(width >= 1110px){
+  .container{
+    padding-inline: 80px;
+  }
+  .desktop-visible{
+    display: block;
+  }
+  .desktop-hidden{
+    display: none;
+  }
+  .header{
+    padding-block: 23px;
+  }
+  .nav-list{
+    display: flex;
+    list-style-type: none;
+    gap: 32px;
+    a{
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 22px;
+      color: rgba(255, 255, 255, 1);
+    }
+  }
+  .top-left-menu{
+    display: flex;
+    gap: 69px;
+    align-items: center;
+  }
+  .top-right-menu .button-container a{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+  .top-right-menu .button-container .btn{
+    color: rgba(67, 126, 247, 1);
+    margin-right: 24px;
+  }
+  .top-right-menu .button-container .btn-primary{
+    padding: 12px 18px;
+    border-radius: 6px;
+  }
+  .hero{
+    padding-inline: 400px;
   }
 }
