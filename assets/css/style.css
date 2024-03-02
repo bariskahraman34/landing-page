@@ -21,6 +21,7 @@ body {
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
+  overflow-x: hidden ;
 }
 
 img, picture, video, canvas, svg {
@@ -181,7 +182,7 @@ a{
 
 .features .heading{
   text-align: center;
-  margin-block: 32px;
+  margin-bottom: 32px;
   h2{
     font-size: 24px;
     font-weight: 700;
@@ -231,6 +232,62 @@ a{
   }
 }
 
+/* Demonstrate Branding */
+
+.bg-blue{
+  background-color: rgba(43, 99, 217, 1);
+  padding: 32px 16px;
+  color: #fff;
+}
+
+#demonstrate-branding{
+  h2{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  ul{
+    list-style-type: none;
+    list-style-image: url('../icons/tick.svg') ;
+    padding-left: 16px;
+    margin-bottom: 32px;
+  }
+  li{
+    line-height: 24px;
+    letter-spacing: -0.10000000149011612px;
+    color: rgba(177, 204, 251, 1);
+  }
+}
+
+#chart-img{
+  margin-inline: auto;
+  object-fit: cover;
+  width: 343px;
+  height: 343px;
+  margin-bottom: 32px;
+}
+
+/* Brands Container */
+#brands-contentment{
+  text-align: center;
+  a{
+    color: rgba(67, 126, 247, 1);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+}
+
+#brands-contentment .image-container{
+  background: url('../img/brands.png');
+  background-size: cover;
+  background-position:left;
+  height:361px;
+  margin-bottom: 16px;
+}
+
 /* TABLET */
 @media(width >= 768px){
   .top{
@@ -269,9 +326,43 @@ a{
     justify-content: center;
   }
 
+  .features{
+    padding-block: 40px;
+  }
+
+  .features .heading{
+    h2{
+      margin-bottom: 16px;
+    }
+  }
+
   #work-easier-today .features-container{
     grid-template-columns: repeat(2,1fr);
     gap: 32px;
+  }
+
+  #chart-img{
+    height: 100%;
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  #demonstrate-branding{
+    h2{
+      font-size: 32px;
+      line-height: 42px;
+    }
+    ul{
+      list-style-type: none;
+      list-style-image: url('../icons/tick.svg') ;
+      padding-left: 16px;
+      margin-bottom: 32px;
+    }
+    li{
+      line-height: 24px;
+      letter-spacing: -0.10000000149011612px;
+      color: rgba(177, 204, 251, 1);
+    }
   }
 }
 
@@ -335,6 +426,9 @@ a{
   .features .heading{
     margin-block: 64px;
     padding-inline: 240px;
+    h2{
+      margin-bottom: 16px;
+    }
   }
 
   #redefine-product .features-container{
@@ -342,5 +436,41 @@ a{
     flex-direction: row-reverse;
     gap: 124px;
     align-items: center;
+    padding-inline: 32px;
   }
+
+  #chart-img{
+    height: 560px;
+    width: 560px;
+    margin-bottom: 0px;
+  }
+
+  #demonstrate-branding{
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    padding-inline: 80px;
+    h2{
+      font-size: 32px;
+      line-height: 42px;
+      margin-bottom: 16px;
+    }
+    p{
+      line-height: 24px;
+      letter-spacing: -0.10000000149011612px;
+      color: rgba(177, 204, 251, 1);
+      margin-bottom: 24px;
+    }
+    ul{
+      list-style-type: none;
+      list-style-image: url('../icons/tick.svg') ;
+      padding-left: 16px;
+      margin-bottom: 32px;
+    }
+    li{
+      line-height: 24px;
+      letter-spacing: -0.10000000149011612px;
+      color: rgba(177, 204, 251, 1);
+      margin-bottom: 10px;
+    }
 }
