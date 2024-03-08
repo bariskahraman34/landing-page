@@ -79,6 +79,14 @@ a{
   display: none !important;
 }
 
+.mobile-visible{
+  display: inherit !important;
+}
+
+.mobile-hidden{
+  display: none;
+}
+
 .container{
   padding-inline: 16px;
   margin-inline: auto;
@@ -288,8 +296,114 @@ a{
   margin-bottom: 16px;
 }
 
+/* Pricing Container */
+#pricing .features-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#pricing .card{
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(234, 235, 240, 1);
+  border-radius: 5px;
+  gap: 24px;
+  .card-heading{
+    text-align: center;
+    border-bottom:1px solid rgba(234, 235, 240, 1);
+    padding-bottom:24px;
+    .badge{
+      display: inline-block;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      padding: 3px 8px;
+      background-color: var(--btn-primary-bg);
+      color: var(--white-color);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: -0.10000000149011612px;
+    }
+    h3{
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 36px;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .price{
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: -0.10000000149011612px;
+      color: rgba(95, 109, 126, 1);
+    }
+  }
+  ul{
+    list-style-image: url('../icons/check.svg');
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  li{
+    margin-left: 11px;
+  }
+  a{
+    text-align: center;
+  }
+  .list-none{
+    list-style-image: url('../icons/x-mark.svg');
+  }
+}
+
+/* Latest Blog Container */
+#blog .blog-cards-container{
+  & .blog-card{
+    margin-bottom: 32px;
+    img{
+      height: 185px;
+      width:100%;
+      object-fit:cover;
+      margin-bottom: 24px;
+      border-radius:10px;
+    }
+    h3{
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    p{
+      line-height: 24px;
+      letter-spacing: -0.10000000149011612px;
+      color: rgba(95, 109, 126, 1);
+      margin-bottom: 16px;
+    }
+    span{
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: -0.10000000149011612px;
+      color: rgba(95, 109, 126, 1);
+    }
+  }
+}
+
 /* TABLET */
 @media(width >= 768px){
+  .tablet-hidden{
+    display: none !important;
+  }
+  .mobile-hidden{
+    display: inherit;
+  }
+  .mobile-visible{
+    display: none !important;
+  }
   .top{
     background: url('../img/hero-bg-tablet.png') , url('../img/hero-mask-tablet.png');
     background-size: cover;
@@ -364,6 +478,47 @@ a{
       color: rgba(177, 204, 251, 1);
     }
   }
+
+  #pricing .features-container{
+    flex-direction: row;
+    gap: 32px;
+  }
+  #pricing .card{
+    padding: 32px;
+    gap: 32px;
+    .card-heading{
+      padding-bottom:32px;
+    }
+  }
+
+  #blog .blog-cards-container{
+    #big-card{
+      display: grid !important;
+      grid-template-areas:
+      'image image image'
+      'content content content'
+      'content content content';
+      img{
+        margin-bottom: 24px;
+        width: 100% !important;
+        grid-area: image;
+      }
+      .blog-content{
+        grid-area: content;
+      }
+    }
+    .blog-card{
+      display: grid;
+      grid-template-columns: 188px auto;
+      place-items: center;
+      column-gap: 24px;
+      align-items: center;
+      img{
+        height: 166px;
+        margin-bottom: 0px;
+      }
+    }
+  }
 }
 
 
@@ -373,7 +528,7 @@ a{
     padding-inline: 80px;
   }
   .desktop-visible{
-    display: block !important;
+    display:inherit !important;
   }
   .desktop-hidden{
     display: none !important;
@@ -473,4 +628,39 @@ a{
       color: rgba(177, 204, 251, 1);
       margin-bottom: 10px;
     }
+  }
+  #blog .blog-cards-container{
+    display: grid;
+    grid-template-areas: 
+    'blogid1 blogid2'
+    'blogid1 blogid3'
+    'blogid1 blogid3'
+    'blogid1 blogid4'
+    ;
+    align-items: start;
+    column-gap: 40px;
+    #big-card{
+      grid-area: blogid1;
+      img{
+        height:210px;
+      }
+      h3{
+        margin-bottom: 16px;
+      }
+    }
+    #blogid-2{
+      grid-area: blogid2;
+    }
+    #blogid-3{
+      grid-area: blogid3;
+    }
+    #blogid-4{
+      grid-area: blogid4;
+    }
+    .blog-card{
+      img{
+        height: 118px;
+      }
+    }
+  }
 }
