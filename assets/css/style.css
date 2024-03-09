@@ -75,6 +75,10 @@ a{
   border-radius: 6px;
 }
 
+.bg-dark{
+  background-color: rgba(21, 27, 40, 1);
+}
+
 .desktop-visible{
   display: none !important;
 }
@@ -434,6 +438,66 @@ a{
   }
 }
 
+
+/* FOOTER STYLING */
+footer{
+  padding-block: 32px;
+
+  ul{
+    list-style-type: none;
+  }
+}
+
+.footer-navigation{
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 64px;
+  row-gap: 24px;
+  h5{
+    font-size: 16px;
+    color: rgba(249, 249, 249, 1);
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.10000000149011612px;
+    margin-bottom: 24px;
+  }
+  a{
+    display: inline-block;
+    color: rgba(165, 172, 186, 1);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  ul > li:not(:last-child){
+    margin-bottom: 12px;
+  }
+}
+
+.footer-bottom{
+  text-align:center;
+  img{
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+}
+.copyright{
+  margin-bottom: 16px;
+  h4{
+    color: rgba(165, 172, 186, 1);
+    line-height: 24px;
+    letter-spacing: -0.10000000149011612px;
+    font-weight: 400;
+  }
+}
+
+.footer-bottom .social-links{
+  ul{
+    display: flex;
+    justify-content:space-around;
+  }
+}
+
 /* TABLET */
 @media(width >= 768px){
   .tablet-hidden{
@@ -586,6 +650,40 @@ a{
         border-radius: 0px 6px 6px 0px;
 
       }
+    }
+  }
+
+  footer{
+    padding-block: 40px;
+  }
+  
+  .footer-navigation{
+    margin-bottom: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 48px;
+    row-gap: 32px;
+    a{
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+  
+  .footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+      margin-bottom: 0px;
+    }
+  }
+  .copyright{
+    margin-bottom: 0px;
+  }
+  
+  .footer-bottom .social-links{
+    ul{
+      gap:24px;
     }
   }
 }
@@ -748,4 +846,17 @@ a{
       }
     }
   }
+
+  footer{
+    padding-block: 40px;
+  }
+  
+  .footer-navigation{
+    margin-bottom: 64px;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 80px;
+    row-gap: 0px;
+  }
+  
+  
 }
